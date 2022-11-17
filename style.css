@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+body {
+  background-color: #222;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 5rem;
+  font-size: 1.2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #f4f4f4;
+  font-weight: 600;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.active-nav-item {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  left: 0;
+  bottom: -10px;
+  background-color: coral;
+  border-radius: 1rem;
+}
+
+section {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 3rem;
+  margin: 10rem 15rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  grid-column: span 3;
+  height: 15rem;
+  background-color: #f4f4f4;
+  padding: 5rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  box-shadow: 0.7rem 0.7rem 0rem #111;
+  border: 4px solid #111;
+}
+
+.card p {
+  display: none;
+  line-height: 150%;
+}
+
+.card.active p {
+  display: block;
+}
+
+.card.active {
+  height: auto;
+  grid-column: 1 / span 6;
+  grid-row: 1;
+  order: 0;
+}
+
+.card.is-inactive {
+  grid-column: span 2;
+}
